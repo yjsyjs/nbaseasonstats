@@ -9,9 +9,9 @@
 
 get_minutes_played <- function(year){
   mp <- data %>%
-    tidyverse::filter(Year == year) %>%
-    tidyverse::select(c(Player, MP)) %>%
-    tidyverse::group_by(Player) %>%
-    tidyverse::summarise(sumMP = sum(MP))
+    dplyr::filter(Year == year) %>%
+    dplyr::select(c(Player, MP)) %>%
+    dplyr::group_by(Player) %>%
+    dplyr::summarise(sumMP = sum(MP))
   return(mp)
 }

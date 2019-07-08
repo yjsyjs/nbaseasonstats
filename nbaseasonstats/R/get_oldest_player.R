@@ -9,10 +9,10 @@
 
 get_oldest_player <- function(year){
   oldest <- data %>%
-    tidyverse::filter(Year == year) %>%
-    tidyverse::filter(Age == max(Age)) %>%
-    tidyverse::select(c(Player, Age)) %>%
-    tidyverse::group_by(Player) %>%
-    tidyverse::summarise(Age = mean(Age))
+    dplyr::filter(Year == year) %>%
+    dplyr::filter(Age == max(Age)) %>%
+    dplyr::select(c(Player, Age)) %>%
+    dplyr::group_by(Player) %>%
+    dplyr::summarise(Age = mean(Age))
   return(oldest[1, ])
 }
